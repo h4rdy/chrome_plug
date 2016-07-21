@@ -1,0 +1,17 @@
+
+{  
+  "manifest_version": 2,
+  "name": "查找.git和.svn泄露",  
+  "version": "2.0",  
+  "description": "在浏览网站的同时，被动查找.git和.svn泄露",  
+  "browser_action": 
+                    {
+    "default_icon": "icon.png"
+                    },
+    "content_scripts":[
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start",
+      "js": ["/js/git.js","/js/svn.js"]
+    }]
+}
